@@ -1,0 +1,82 @@
+.filter-movies {
+    .container {
+        margin-top: 20px;
+    }
+
+    .show {
+        display: block  !important;
+    }
+}
+
+.filter-movies__top {
+    align-items: center;
+    .current-page {
+        span {
+            color: $color-text;
+            font-size: $font-text;
+        }
+    }
+
+    .toggle-filter {
+        text-align: right;
+        button {
+            background-color: transparent;
+            border: none;
+            color: $color-white;
+            font-size: $font-menu;
+            display: inline-flex;
+            align-items: center;
+            letter-spacing: 1px;
+            cursor: pointer;
+            svg {
+                width: 28px;
+                height: 28px;
+                padding-left: 4px;
+            }
+        }
+    }
+}
+
+
+.filter-movies__bottom {
+    margin-top: 15px;
+    align-items: center;
+    display: none !important;
+    #form-filter {
+        display: flex;
+        align-items: center;
+        .filter-box {
+            flex: 1;
+            overflow: hidden;
+            border: 1px solid $color-secondary;
+            margin: 0 5px;
+            .filter-box-title {
+                display: none;
+            }
+            .list-select {
+                width: 100%;
+                border: none;
+                background: $color-option;
+                color: $color-white;
+                font-size: $font-select;
+                padding: 10px 0 10px 10px;
+            }
+        }
+    }
+    .btn-group {
+        text-align: right;
+        width: 100%;
+        padding: 0;
+        padding-right: 30px;
+        .btn-filter {
+            width: 100%;
+            background-color: $color-red;
+            border-radius: 1px solid $color-red;
+            padding: 9px 0;
+            border: none;
+            color: $color-white;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+        }
+    }
+}

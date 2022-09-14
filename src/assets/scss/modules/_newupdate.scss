@@ -1,0 +1,25 @@
+.new-update {
+    margin-top: 20px;
+    overflow: hidden;
+    .container {
+        padding: 10px 20px;
+    }
+
+    .list-movies {
+        background-color: $color-primary;
+        margin-top: 20px;
+        overflow: hidden;
+        position: relative;
+        .movie-item {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            .movie-status {
+                left: 5px;
+            }
+            .overlay {
+                left: 5px;
+                right: 5px;
+            }
+        }
+    } 
+}

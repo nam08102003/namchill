@@ -1,0 +1,94 @@
+.footer {
+    background-color: #0e1215;
+    .container {
+        padding: 10px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+
+.footer-top {
+    border-bottom: 1px solid $color-secondary;
+    padding-bottom: 20px;
+    .footer-top__left {
+        .footer-logo {
+            padding-bottom: 6px;
+            border-bottom: 1px solid $color-secondary;
+            h1 {
+                padding-left: 10px;
+                color: $color-slogan;
+                font-size: 44px;
+                font-weight: $font-m;
+                margin: 0;
+            }
+        }
+        .footer-description {
+            padding-left: 10px;
+            margin-top: 40px;
+            max-width: 90%;
+            p {
+                color: $color-text;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .footer-menu {
+        padding-left: 70px;
+        padding-top: 20px;
+        ul {
+            li {
+                padding: 6px 4px;
+                cursor: pointer;
+                a {
+                    color: $color-white;
+                    font-size: $font-menu;
+                    transition: all 0.4s ease-in-out;
+                }
+                &:hover {
+                    a {
+                        color: $color-title;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-top__right{
+        padding-left: 0;
+    }
+
+}
+
+
+.footer-bottom {
+    margin-top: 15px;
+    .copyright {
+        span {
+            font-size: $font-text;
+            display: inline-flex;
+            align-items: center;
+            word-spacing: 2px;
+            p {
+                padding-left: 4px;
+                color: $color-text;
+                font-size: $font-text;
+            }
+        }
+    }
+
+    .footer-slogan {
+        text-align: right;
+        span {
+            font-size: $font-menu;
+            padding: 1px 8px;
+            &:nth-child(1) {
+                border-right: 1px solid $color-white;
+            }
+            &:nth-child(2) {
+                border-right: 1px solid $color-white;
+            }
+        }
+    }
+}

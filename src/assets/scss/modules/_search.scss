@@ -1,0 +1,27 @@
+.search-form {
+    width: 470px;
+    height: 35px;
+    border: 1px solid $color-title;
+    border-radius: 17px;
+    font-size: 13px;
+    background-color: $color-secondary;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .logo-search {
+        position: absolute;
+        padding-left: 12px;
+        cursor: text;
+        font-size: 27px;
+        fill: $color-white;
+    }
+    input {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        padding: 34px;
+        color: $color-white;
+    }
+}

@@ -1,0 +1,31 @@
+import React from "react";
+import NominatedMovies from "../components/sections/NominatedMovies";
+import NewUpdate from "../components/sections/NewUpdate";
+import MovieTheater from "../components/sections/MovieTheater";
+import NewSeriesMovie from "../components/sections/NewSeriesMovie";
+import NewOddMovie from "../components/sections/NewOddMovie";
+import Sidebar from "../components/layout/Sidebar";
+function Home() {
+  return (
+    <>
+      <NominatedMovies />
+      <NewUpdate />
+      <MovieTheater />
+      <div className="grid wide">
+        <div className="container">
+          <div className="row">
+            <div className="col l-8">
+              <NewSeriesMovie />
+              <NewOddMovie />
+            </div>
+            <div className="col l-4">
+              <Sidebar />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Home;

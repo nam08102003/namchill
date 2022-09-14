@@ -1,0 +1,49 @@
+.nominated-movies {
+    margin-top: 20px;
+    overflow: hidden;
+    .container {
+        padding: 10px 20px;
+
+        .slider-movie {
+            background-color: $color-primary;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            .slick-slider {
+                .slick-track {
+                    display: flex;
+                }
+            }
+
+
+            .arrow-btn {
+                position: absolute;
+                width: 30px;
+                height: 45px;
+                display: inline-flex;
+                align-items: center;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: $color-title;
+                z-index: 100;
+                border: none;
+                cursor: pointer;
+                svg {
+                    width: 2em;
+                    height: 2em;
+                    polyline {
+                        stroke: $color-white;
+                    }
+                }
+            }
+
+            .previous-btn {
+                left: 0;
+            }
+
+            .next-btn {
+                right: 0;
+            }
+        }
+    }
+}
