@@ -1,0 +1,40 @@
+.introduce-web {
+    margin-top: 30px;
+    border: 1px solid $color-text;
+    .container {
+        padding: 20px 20px;
+    }
+
+    .introduce-title {
+        display: inline-flex;
+        align-items: center;
+        h3 {
+            color: $color-title;
+            position: relative;
+            &:first-child {
+                padding-right: 15px;
+            }
+            &:not(:first-child) {
+                padding: 0 15px;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background-color: $color-title;
+            }
+        }
+    }
+
+    .introduce-content {
+        margin-top: 16px;
+        p{
+            line-height: 22px;
+            font-size: $font-select;
+            color: $color-text;
+        }
+    }
+}

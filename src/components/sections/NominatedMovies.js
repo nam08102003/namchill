@@ -40,8 +40,10 @@ function NominatedMovies() {
   return (
     <div className="nominated-movies grid wide">
       <div className="container">
-        <div className="section-title row">
-          <span>Phim đề cử</span>
+        <div className="section-title">
+          <div className="title">
+            <span>Phim đề cử</span>
+          </div>
         </div>
         <div className="slider-movie grid wide">
           <button className="arrow-btn previous-btn" onClick={gotoPrevious}>

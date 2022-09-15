@@ -5,6 +5,7 @@ import MovieTheater from "../components/sections/MovieTheater";
 import NewSeriesMovie from "../components/sections/NewSeriesMovie";
 import NewOddMovie from "../components/sections/NewOddMovie";
 import Sidebar from "../components/layout/Sidebar";
+import IntroduceWeb from "../components/sections/IntroduceWeb";
 function Home() {
   return (
     <>
@@ -17,6 +18,7 @@ function Home() {
             <div className="col l-8">
               <NewSeriesMovie />
               <NewOddMovie />
+              <IntroduceWeb />
             </div>
             <div className="col l-4">
               <Sidebar />

@@ -1,23 +1,27 @@
-let TrailerMovies = [];
-// const url =
-//   "https://api.themoviedb.org/3/movie/upcoming?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=1";
+import React, { useState, useEffect } from "react";
+import TopMovie from "./TopMovie";
 
-// try {
-//   const respone = fetch(url);
-//   const data = respone.json();
-//   let sliceData = data.results.slice(0, 10);
-//   TrailerMovies = sliceData;
-// } catch (err) {
-//   console.log("Error: ", err);
-// }
+function TopTrailer() {
+  const [listmovie, setlistmovie] = useState([]);
 
-fetch(
-  "https://api.themoviedb.org/3/movie/now_playing?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=2"
-)
-  .then((response) => response.json())
-  .then((data) => {
-    let sliceData = data.results.slice(0, 12);
-    TrailerMovies = sliceData;
-  });
+  useEffect(() => {
+    const url =
+      "https://api.themoviedb.org/3/movie/upcoming?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=2";
+    const callApi = async () => {
+      const respone = await fetch(url);
+      const data = await respone.json();
+      let sliceData = data.results.slice(0, 8);
+      setlistmovie(sliceData);
+    };
 
-export default TrailerMovies;
+    callApi();
+  }, []);
+
+  return (
+    <div className="top-trailer-movie">
+      <TopMovie title="Phim sắp chiếu" movies={listmovie} />
+    </div>
+  );
+}
+
+export default TopTrailer;

@@ -1,7 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./views/Home";
+import IntroduceMovie from "./views/IntroduceMovie";
 import LayoutList from "./layouts/LayoutList";
+import LayoutMovie from "./layouts/LayoutMovie";
+import LayoutWatchFilm from "./layouts/LayoutWatchFilm";
+import WatchFilm from "./views/WatchFilm";
 
 function App() {
   return (
@@ -15,6 +19,14 @@ function App() {
         <Route path="/theater" element={<LayoutList children={<Home />} />} />
         <Route path="/upcoming" element={<LayoutList children={<Home />} />} />
         <Route path="/news" element={<LayoutList children={<Home />} />} />
+        <Route
+          path="/movie-store/:slug"
+          element={<LayoutMovie children={<IntroduceMovie />} />}
+        />
+        <Route
+          path="/watch-movie/"
+          element={<LayoutWatchFilm children={<WatchFilm />} />}
+        />
       </Routes>
     </div>
   );

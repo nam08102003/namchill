@@ -3,8 +3,7 @@
 
 
 .section-title {
-    padding-left: 25px;
-    padding-top: 10px;
+    padding-left: 20px;
     align-items: center;
     .title {
         span {
@@ -90,9 +89,9 @@
 
     .overlay {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
+        left: 5px;
+        right: 5px;
+        bottom: 0;
         top: 0;
         background-color: $color-black;
         opacity: 0;

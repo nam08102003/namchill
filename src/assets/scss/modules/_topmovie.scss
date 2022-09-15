@@ -1,0 +1,56 @@
+.top-movie {
+    padding-top: 10px;
+    .movie-item {
+        margin-top: 20px;
+        &.row {
+            flex-wrap: nowrap;
+        }
+        &:hover {
+            .movie-info {
+                .name-vi {
+                    color: $color-title;
+                }
+            }
+        }
+        .movie-img {
+            max-width: 90px;
+            height: 116px;
+            overflow: hidden;
+            &.col {
+                padding: 0;
+            }
+            img {
+                width: 90px;
+            }
+        }
+
+        .movie-info {
+            margin-left: 4px;
+            line-height: 24px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            h3 {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .name-vi {
+                font-size: $font-text;
+                font-family: $font-arial;
+                font-weight: $font-m;
+                color: $color-white;
+            }
+            .name-eg {
+                font-size: $font-select;
+                font-family: $font-arial;
+                font-weight: $font-m;
+            }
+            .seed {
+                font-size: $font-select;
+                font-family: $font-arial;
+                font-weight: $font-m;
+                color: $color-text;
+            }
+        }
+    }
+}
