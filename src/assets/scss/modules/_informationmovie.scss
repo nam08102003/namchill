@@ -1,0 +1,111 @@
+.information-movie-site {
+    margin-top: 50px;
+    & > .container {
+        padding: 20px;
+    }
+
+    .film-poster {
+        padding: 0;
+        position: relative;
+        background-color: $color-secondary;
+        .film-poster-main {
+            img {
+                height: 370px;
+                border-radius: 3px;
+            }
+
+        }
+        .select-button-group {
+            position: absolute;
+            bottom: 10px;
+           left: 7px;
+           display: flex;
+           align-items: center;
+            .select-episode-button {
+                background-image: linear-gradient( 90deg ,#ff8a00 0,#ff5860 100%);
+                border: none;
+                padding: 15px 15px;
+                margin: 0 5px;
+                cursor: pointer;
+                color: $color-white;
+                border-radius: 8px;
+                font-size: $font-text;
+                width: 114px;
+                transition: all 0.5s ease-in-out;
+                &:hover {
+                    background-image: linear-gradient( 45deg ,#ff5860 0,#ff8a00 100%);
+                }
+            }
+            .watch-button {
+                margin: 0 5px;
+                padding: 15px 13px;
+                background-color: $color-red;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: $font-text;
+                transition: all 0.5s ease-in-out;
+                color: $color-white;
+                display: flex;
+                align-items: center;
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+        .film-trailer {
+            position: absolute;
+            top: 6px;
+            left: 8px;
+            button {
+                border: none;
+                padding: 8px 18px;
+                cursor: pointer;
+                color: $color-white;
+                background-color: $color-trailer;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .film-detail {
+        padding: 0;
+        background-color: $color-option;
+        padding: 12px;
+        height: auto;
+        .film-title {
+            margin: 0;
+            color: $color-title;
+            font-size: $font-name;
+            font-weight: $font-m;
+        }
+        p {
+            padding: 8px 0;
+            font-size: $font-text;
+            color: $color-text;
+            span {
+                font-size: $font-text;
+                padding-left: 8px;
+                line-break: anywhere;
+            }
+        }
+    }
+
+    .content-film {
+        margin-top: 70px;
+        border: 1px solid $color-option;
+        .container {
+            padding: 30px 15px;
+             & > .section-title {
+                padding: 0;
+             }
+        }
+
+        .content-film-main {
+            p {
+                font-size: $font-select;
+                line-height: 1.5rem;
+                color: $color-text;
+            }
+        }
+    }
+}

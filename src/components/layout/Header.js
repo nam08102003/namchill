@@ -29,7 +29,7 @@ function Header({ Nav }) {
           </div>
         </div>
         <div className="header-bottom">
-          <div className="grid wide">
+          <nav className="grid wide">
             <ul className="menu row">
               {Nav &&
                 Nav.map((navLink, index) => {
@@ -47,7 +47,7 @@ function Header({ Nav }) {
                   );
                 })}
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
     </header>

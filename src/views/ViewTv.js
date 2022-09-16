@@ -1,16 +1,16 @@
 import React from "react";
-import InformationMovie from "../components/sections/InformationMovie";
 import Sidebar from "../components/layout/Sidebar";
 import PluginComment from "../components/sections/PluginComment";
 import WatchMore from "../components/sections/WatchMore";
+import WatchMovie from "../components/sections/WatchMovie";
 
-function WatchFilm() {
+function ViewTv() {
   return (
     <div className="grid wide">
       <div className="container">
         <div className="row">
           <div className="col l-8">
-            <InformationMovie />
+            <WatchMovie />
             <PluginComment />
             <WatchMore />
           </div>
@@ -23,4 +23,4 @@ function WatchFilm() {
   );
 }
 
-export default WatchFilm;
+export default ViewTv;

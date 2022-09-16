@@ -14,7 +14,6 @@ function WatchMore() {
         setMovies(data.results);
       });
   }, []);
-  console.log(movies);
   return (
     <div className="movie-favorite grid wide">
       <div className="container">

@@ -5,7 +5,7 @@ import IntroduceMovie from "./views/IntroduceMovie";
 import LayoutList from "./layouts/LayoutList";
 import LayoutMovie from "./layouts/LayoutMovie";
 import LayoutWatchFilm from "./layouts/LayoutWatchFilm";
-import WatchFilm from "./views/WatchFilm";
+import ViewTv from "./views/ViewTv";
 import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
@@ -25,12 +25,12 @@ function App() {
           />
           <Route path="/news" element={<LayoutList children={<Home />} />} />
           <Route
-            path="/movie-store/:slug"
+            path="/movie-store/:movieId"
             element={<LayoutMovie children={<IntroduceMovie />} />}
           />
           <Route
             path="/watch-movie/:params/:slug"
-            element={<LayoutWatchFilm children={<WatchFilm />} />}
+            element={<LayoutWatchFilm children={<ViewTv />} />}
           />
         </Routes>
       </ScrollToTop>
