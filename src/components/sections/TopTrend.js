@@ -19,7 +19,7 @@ function TopTrend() {
 
   return (
     <div className="top-trend-movie">
-      <TopMovie title="Top" movies={listmovie} />
+      <TopMovie title="Top" movies={listmovie} trailer={false} />
     </div>
   );
 }

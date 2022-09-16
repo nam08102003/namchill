@@ -13,9 +13,11 @@
             }
         }
         .movie-img {
+            position: relative;
             max-width: 90px;
             height: 116px;
             overflow: hidden;
+            position: relative;
             &.col {
                 padding: 0;
             }
@@ -50,6 +52,17 @@
                 font-family: $font-arial;
                 font-weight: $font-m;
                 color: $color-text;
+            }
+        }
+
+        .movie-status {
+            position: absolute;
+            top: 0;
+            right: 0;
+            span {
+                padding: 3px 5px;
+                background-color: $color-trailer;
+                font-size: $font-select;
             }
         }
     }

@@ -34,7 +34,10 @@ function InformationMovie() {
             </div>
             <div className="select-button-group">
               <button className="select-episode-button">Chọn tập</button>
-              <Link to={`watch-movie/${film.title}`} className="watch-button">
+              <Link
+                to={`/watch-movie/${film.title}/${film.id}`}
+                className="watch-button"
+              >
                 Xem Phim
               </Link>
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function TopMovie({ title, movies }) {
+function TopMovie({ title, movies, trailer }) {
   return (
     <div className="top-movie">
       <div className="container">
@@ -18,6 +18,9 @@ function TopMovie({ title, movies }) {
                         src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
                         alt={movie.title}
                       />
+                      <div className="movie-status">
+                        {trailer == true ? <span>Trailer</span> : ""}
+                      </div>
                     </div>
                     <div className="movie-info col l-8">
                       <h3 className="name-vi">{movie.title}</h3>

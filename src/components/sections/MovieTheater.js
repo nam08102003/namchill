@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineRight } from "react-icons/ai";
+import ListMovie from "./ListMovie";
 
 function MovieTheater() {
   const [newMovies, setNewMovies] = useState([]);
@@ -33,39 +32,7 @@ function MovieTheater() {
           </div>
         </div>
         <div className="list-movies row no-gutters">
-          {newMovies &&
-            newMovies.map((movie, index) => {
-              return (
-                <Link
-                  to={`/movie-store/${movie.id}`}
-                  key={index}
-                  className="col l-2"
-                >
-                  <div className="movie-item">
-                    <div className="movie-img">
-                      <img
-                        src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                        alt={movie.title}
-                      />
-                    </div>
-                    <div className="movie-info">
-                      <div className="movie-name">
-                        <h2>{movie.title}</h2>
-                      </div>
-                      <div className="movie-status">
-                        <span>HD Vietsub + TM</span>
-                      </div>
-                    </div>
-                    <div className="overlay"></div>
-                    <div className="action-btn">
-                      <span className="play-btn">
-                        <BsFillPlayFill />
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+          <ListMovie movies={newMovies} />
         </div>
       </div>
     </div>

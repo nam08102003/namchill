@@ -6,9 +6,10 @@ import NewSeriesMovie from "../components/sections/NewSeriesMovie";
 import NewOddMovie from "../components/sections/NewOddMovie";
 import Sidebar from "../components/layout/Sidebar";
 import IntroduceWeb from "../components/sections/IntroduceWeb";
+import ScrollToTop from "../utils/ScrollToTop";
 function Home() {
   return (
-    <>
+    <ScrollToTop>
       <NominatedMovies />
       <NewUpdate />
       <MovieTheater />
@@ -26,7 +27,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </>
+    </ScrollToTop>
   );
 }
 

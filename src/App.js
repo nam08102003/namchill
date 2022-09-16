@@ -6,28 +6,34 @@ import LayoutList from "./layouts/LayoutList";
 import LayoutMovie from "./layouts/LayoutMovie";
 import LayoutWatchFilm from "./layouts/LayoutWatchFilm";
 import WatchFilm from "./views/WatchFilm";
+import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<LayoutList children={<Home />} />} />
-        <Route path="/genre" element={<LayoutList children={<Home />} />} />
-        <Route path="/nation" element={<LayoutList children={<Home />} />} />
-        <Route path="/series" element={<LayoutList children={<Home />} />} />
-        <Route path="/odd" element={<LayoutList children={<Home />} />} />
-        <Route path="/theater" element={<LayoutList children={<Home />} />} />
-        <Route path="/upcoming" element={<LayoutList children={<Home />} />} />
-        <Route path="/news" element={<LayoutList children={<Home />} />} />
-        <Route
-          path="/movie-store/:slug"
-          element={<LayoutMovie children={<IntroduceMovie />} />}
-        />
-        <Route
-          path="/watch-movie/"
-          element={<LayoutWatchFilm children={<WatchFilm />} />}
-        />
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<LayoutList children={<Home />} />} />
+          <Route path="/genre" element={<LayoutList children={<Home />} />} />
+          <Route path="/nation" element={<LayoutList children={<Home />} />} />
+          <Route path="/series" element={<LayoutList children={<Home />} />} />
+          <Route path="/odd" element={<LayoutList children={<Home />} />} />
+          <Route path="/theater" element={<LayoutList children={<Home />} />} />
+          <Route
+            path="/upcoming"
+            element={<LayoutList children={<Home />} />}
+          />
+          <Route path="/news" element={<LayoutList children={<Home />} />} />
+          <Route
+            path="/movie-store/:slug"
+            element={<LayoutMovie children={<IntroduceMovie />} />}
+          />
+          <Route
+            path="/watch-movie/:params/:slug"
+            element={<LayoutWatchFilm children={<WatchFilm />} />}
+          />
+        </Routes>
+      </ScrollToTop>
     </div>
   );
 }

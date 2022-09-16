@@ -4,7 +4,7 @@ import Sidebar from "../components/layout/Sidebar";
 import PluginComment from "../components/sections/PluginComment";
 import WatchMore from "../components/sections/WatchMore";
 
-function IntroduceMovie() {
+function WatchFilm() {
   return (
     <div className="grid wide">
       <div className="container">
@@ -23,4 +23,4 @@ function IntroduceMovie() {
   );
 }
 
-export default IntroduceMovie;
+export default WatchFilm;

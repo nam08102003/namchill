@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineRight } from "react-icons/ai";
+import ListMovie from "./ListMovie";
 
 function NewOddMovie() {
   const [newMovies, setNewMovies] = useState([]);
@@ -32,33 +32,7 @@ function NewOddMovie() {
           </div>
         </div>
         <div className="list-movies row no-gutters">
-          {newMovies &&
-            newMovies.map((movie, index) => {
-              return (
-                <div className="movie-item col l-3" key={index}>
-                  <div className="movie-img">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                      alt={movie.title}
-                    />
-                  </div>
-                  <div className="movie-info">
-                    <div className="movie-name">
-                      <h2>{movie.title}</h2>
-                    </div>
-                    <div className="movie-status">
-                      <span>HD Vietsub + TM</span>
-                    </div>
-                  </div>
-                  <div className="overlay"></div>
-                  <div className="action-btn">
-                    <span className="play-btn">
-                      <BsFillPlayFill />
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
+          <ListMovie movies={newMovies} total={4} />
         </div>
       </div>
     </div>

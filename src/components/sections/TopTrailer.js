@@ -19,7 +19,7 @@ function TopTrailer() {
 
   return (
     <div className="top-trailer-movie">
-      <TopMovie title="Phim sắp chiếu" movies={listmovie} />
+      <TopMovie title="Phim sắp chiếu" movies={listmovie} trailer={true} />
     </div>
   );
 }

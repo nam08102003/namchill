@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { BsFillPlayFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 function NominatedMovies() {
   const sliderRef = useRef();
@@ -53,7 +54,11 @@ function NominatedMovies() {
             {movies &&
               movies.map((movie, index) => {
                 return (
-                  <div className="movie-item" key={index}>
+                  <Link
+                    to={`/movie-store/${movie.id}`}
+                    className="movie-item"
+                    key={index}
+                  >
                     <div className="movie-img">
                       <img
                         src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
@@ -74,7 +79,7 @@ function NominatedMovies() {
                         <BsFillPlayFill />
                       </span>
                     </div>
-                  </div>
+                  </Link>
                 );
               })}
           </Slider>

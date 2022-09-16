@@ -1,12 +1,14 @@
 import React from "react";
 
 function PluginComment() {
+  const url = "https://www.themoviedb.org";
   return (
     <div
-      class="fb-comments"
-      data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
-      data-width="500"
+      className="fb-comments plugin-facebook"
+      data-href={url}
+      data-width="100%"
       data-numposts="5"
+      data-colorscheme="light"
     ></div>
   );
 }
