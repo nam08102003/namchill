@@ -94,13 +94,16 @@
         margin-top: 70px;
         border: 1px solid $color-option;
         .container {
-            padding: 30px 15px;
+            padding: 0;
+            padding-bottom: 30px;
              & > .section-title {
-                padding: 0;
+                padding: 12px;
+                background-color: $color-secondary;
              }
         }
 
         .content-film-main {
+            padding: 10px;
             p {
                 font-size: $font-select;
                 line-height: 1.5rem;

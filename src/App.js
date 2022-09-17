@@ -29,7 +29,7 @@ function App() {
             element={<LayoutMovie children={<IntroduceMovie />} />}
           />
           <Route
-            path="/watch-movie/:params/:slug"
+            path="/watch-movie/:params/:movieId"
             element={<LayoutWatchFilm children={<ViewTv />} />}
           />
         </Routes>

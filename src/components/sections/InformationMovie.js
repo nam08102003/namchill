@@ -25,9 +25,9 @@ function InformationMovie() {
           return (
             data2 &&
             data2.crew &&
-            data2.crew.filter(
-              (item) => item.known_for_department === "Directing"
-            )
+            data2.crew
+              .filter((item) => item.known_for_department === "Directing")
+              .slice(0, 1)
           );
         });
         setActor(() => {
@@ -46,8 +46,6 @@ function InformationMovie() {
     callApi(url, urlCredit);
   }, []);
 
-  console.log(film);
-
   return (
     <div className="information-movie-site">
       <div className="container grid">
@@ -62,7 +60,13 @@ function InformationMovie() {
             <div className="select-button-group">
               <button className="select-episode-button">Chọn tập</button>
               <Link
-                to={`/watch-movie/${film.title}/${film.id}`}
+                to={`/watch-movie/${
+                  film &&
+                  film.title &&
+                  film.title
+                    .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, "")
+                    .replace(/\s/g, "")
+                }/${film.id}`}
                 className="watch-button"
               >
                 <BsPlayFill />
@@ -79,7 +83,7 @@ function InformationMovie() {
               Trạng thái: <span>HD VietSub + Thuyết Minh</span>
             </p>
             <p className="runtime">
-              Thời gian: <span>{film.runtime}</span>
+              Thời gian: <span>{film.runtime} phút</span>
             </p>
             <p className="language">
               Ngôn ngữ: <span>Phụ đề việt, Thuyết minh</span>
@@ -89,7 +93,7 @@ function InformationMovie() {
               <span>
                 {film.genres &&
                   film.genres.length > 0 &&
-                  film.genres.map((item) => item.name)}
+                  film.genres.map((item) => item.name).toString()}
               </span>
             </p>
             <p className="country">
@@ -105,9 +109,7 @@ function InformationMovie() {
               <span>
                 {director &&
                   director.length > 0 &&
-                  director.map((item) => {
-                    return item.name;
-                  })}
+                  director.map((item) => item.name)}
               </span>
             </p>
             <p className="actor">
@@ -115,9 +117,7 @@ function InformationMovie() {
               <span>
                 {actor &&
                   actor.length > 0 &&
-                  actor.map((item) => {
-                    return item.name;
-                  })}
+                  actor.map((item) => item.name).toString()}
               </span>
             </p>
             <p className="year">
