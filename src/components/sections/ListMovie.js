@@ -12,7 +12,7 @@ function ListMovie({ movies, total }) {
               to={`/movie-store/${movie.id}`}
               key={index}
               exact={true}
-              className={`col ${total == 4 ? "l-3" : "l-2"} c-6`}
+              className={`col ${total == 4 ? "l-3  m-3" : "l-2 m-2"} c-6`}
             >
               <div className="movie-item">
                 <div className="movie-img">

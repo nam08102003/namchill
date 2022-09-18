@@ -16,12 +16,12 @@ function Home() {
       <div className="grid wide">
         <div className="container">
           <div className="row">
-            <div className="col l-8">
+            <div className="col l-8 m-8">
               <NewSeriesMovie />
               <NewOddMovie />
               <IntroduceWeb />
             </div>
-            <div className="col l-4">
+            <div className="col l-4 m-4">
               <Sidebar />
             </div>
           </div>

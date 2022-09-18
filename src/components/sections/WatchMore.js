@@ -7,7 +7,7 @@ function WatchMore() {
 
   useEffect(() => {
     const url =
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=3";
+      "https://api.themoviedb.org/3/movie/297762/similar?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=2";
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
@@ -17,8 +17,8 @@ function WatchMore() {
   return (
     <div className="movie-favorite grid wide">
       <div className="container">
-        <div className="section-title row">
-          <div className="title col l-7">
+        <div className="section-title">
+          <div className="title">
             <span>Có thể bạn thích xem</span>
           </div>
         </div>

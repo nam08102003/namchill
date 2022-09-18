@@ -21,10 +21,10 @@ function MovieTheater() {
     <div className="movie-theater grid wide">
       <div className="container">
         <div className="section-title row">
-          <div className="title col l-7">
+          <div className="title col l-7 m-7">
             <span>Phim chiếu rạp</span>
           </div>
-          <div className="see-all col l-5">
+          <div className="see-all col l-5 m-5">
             <button className="see-all-btn">
               Xem Thêm
               <AiOutlineRight />

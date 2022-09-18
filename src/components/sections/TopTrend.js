@@ -7,19 +7,22 @@ function TopTrend() {
   useEffect(() => {
     const url =
       "https://api.themoviedb.org/3/movie/top_rated?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=2";
-    const callApi = async () => {
+    const url2 =
+      "https://api.themoviedb.org/3/movie/top_rated?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=3";
+    const callApi = async (url, url2) => {
       const respone = await fetch(url);
+      const respone2 = await fetch(url2);
       const data = await respone.json();
-      let sliceData = data.results.slice(0, 8);
-      setlistmovie(sliceData);
+      const data2 = await respone2.json();
+      setlistmovie(data.results.concat(data2.results));
     };
 
-    callApi();
+    callApi(url, url2);
   }, []);
 
   return (
     <div className="top-trend-movie">
-      <TopMovie title="Top" movies={listmovie} trailer={false} />
+      <TopMovie title="Top" movies={listmovie} trailer={false} time={true} />
     </div>
   );
 }

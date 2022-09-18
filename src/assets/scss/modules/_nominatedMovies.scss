@@ -9,6 +9,9 @@
             margin-top: 20px;
             position: relative;
             overflow: hidden;
+            @include tablet {
+                width: 100%;
+            }
             .slick-slider {
                 .slick-track {
                     display: flex;

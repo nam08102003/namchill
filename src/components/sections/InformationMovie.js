@@ -50,7 +50,7 @@ function InformationMovie() {
     <div className="information-movie-site">
       <div className="container grid">
         <div className="introduce-film row">
-          <div className="film-poster col l-4">
+          <div className="film-poster col l-4 m-4">
             <div className="film-poster-main">
               <img
                 src={`https://image.tmdb.org/t/p/w500${film.backdrop_path}`}
@@ -77,7 +77,7 @@ function InformationMovie() {
               <button>Trailer</button>
             </div>
           </div>
-          <div className="film-detail col l-8">
+          <div className="film-detail col l-8 m-8">
             <h1 className="film-title">{film.title}</h1>
             <p className="status">
               Trạng thái: <span>HD VietSub + Thuyết Minh</span>

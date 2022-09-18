@@ -12,10 +12,10 @@ function FilterMovie({ currentPage, ContentFilter }) {
     <div className="filter-movies grid wide">
       <div className="container">
         <div className="filter-movies__top row">
-          <div className="current-page col l-6">
+          <div className="current-page col l-6 m-6 c-6">
             <span>{currentPage}</span>
           </div>
-          <div className="toggle-filter col l-6">
+          <div className="toggle-filter col l-6 m-6 c-6">
             <button className="button-filter" onClick={changeShow}>
               Lọc phim
               <BiChevronDown />

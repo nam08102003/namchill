@@ -1,0 +1,44 @@
+.movie-odd {
+    .container {
+        padding: 20px;
+    }
+
+    .list-movies {
+        margin-top: 20px;
+        .movie-item {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            .movie-status {
+                left: 5px;
+            }
+            .overlay {
+                left: 5px;
+                right: 5px;
+            }
+        }
+    }
+}
+
+.movie-series {
+    .container {
+        padding: 20px;
+    }
+
+    .list-movies {
+        margin-top: 20px;
+        .movie-item {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            .movie-status {
+                left: 5px;
+                @include tablet {
+                    
+                }
+            }
+            .overlay {
+                left: 5px;
+                right: 5px;
+            }
+        }
+    }
+}

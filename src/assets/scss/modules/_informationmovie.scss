@@ -1,5 +1,5 @@
 .information-movie-site {
-    margin-top: 50px;
+    margin-top: 40px;
     & > .container {
         padding: 20px;
     }
@@ -7,37 +7,44 @@
     .film-poster {
         padding: 0;
         position: relative;
-        background-color: $color-secondary;
         .film-poster-main {
             img {
                 height: 370px;
                 border-radius: 3px;
+                @include tablet {
+                    height: 350px;
+                }
             }
 
         }
         .select-button-group {
             position: absolute;
-            bottom: 10px;
-           left: 7px;
-           display: flex;
-           align-items: center;
+            width: 100%;
+            bottom: 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             .select-episode-button {
                 background-image: linear-gradient( 90deg ,#ff8a00 0,#ff5860 100%);
                 border: none;
-                padding: 15px 15px;
-                margin: 0 5px;
+                padding: 15px;
+                width: 110px;
+                margin-right: 5px;
                 cursor: pointer;
                 color: $color-white;
                 border-radius: 8px;
                 font-size: $font-text;
-                width: 114px;
                 transition: all 0.5s ease-in-out;
                 &:hover {
                     background-image: linear-gradient( 45deg ,#ff5860 0,#ff8a00 100%);
                 }
+                @include tablet {
+                    font-size: $font-select;
+                    width: 100px;
+                }
             }
             .watch-button {
-                margin: 0 5px;
+                margin-left: 5px;
                 padding: 15px 13px;
                 background-color: $color-red;
                 border-radius: 8px;
@@ -49,6 +56,9 @@
                 align-items: center;
                 &:hover {
                     opacity: 0.7;
+                }
+                @include tablet {
+                    font-size: $font-select;
                 }
             }
         }

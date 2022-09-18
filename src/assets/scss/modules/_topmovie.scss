@@ -66,4 +66,39 @@
             }
         }
     }
+    .section-title {
+        & > .title {
+            align-items: center;
+        }
+        .select-time {
+            ul {
+                li {
+                    padding: 5px 7px;
+                    background-color: $color-option;
+                    cursor: pointer;
+                    &:not(:last-child) {
+                        border-right: 1px solid $color-text;
+                    }
+                    button {
+                        padding: 5px 6px;
+                        color: $color-text;
+                        font-size: $font-select;
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
+                        @include tablet {
+                            font-size: $font-description;
+                        }
+
+                    }
+                }
+                .active {
+                    background: $color-secondary;
+                    button {
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
 }

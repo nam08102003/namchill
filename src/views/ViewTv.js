@@ -9,12 +9,12 @@ function ViewTv() {
     <div className="grid wide">
       <div className="container">
         <div className="row">
-          <div className="col l-8">
+          <div className="col l-8 m-8">
             <WatchMovie />
             <PluginComment />
             <WatchMore />
           </div>
-          <div className="col l-4">
+          <div className="col l-4 m-4">
             <Sidebar />
           </div>
         </div>

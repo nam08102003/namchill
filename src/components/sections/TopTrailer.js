@@ -10,7 +10,7 @@ function TopTrailer() {
     const callApi = async () => {
       const respone = await fetch(url);
       const data = await respone.json();
-      let sliceData = data.results.slice(0, 8);
+      let sliceData = data.results.slice(0, 10);
       setlistmovie(sliceData);
     };
 
@@ -19,7 +19,12 @@ function TopTrailer() {
 
   return (
     <div className="top-trailer-movie">
-      <TopMovie title="Phim sắp chiếu" movies={listmovie} trailer={true} />
+      <TopMovie
+        title="Phim sắp chiếu"
+        movies={listmovie}
+        trailer={true}
+        time={false}
+      />
     </div>
   );
 }
