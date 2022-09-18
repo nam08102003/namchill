@@ -11,8 +11,9 @@ function ListMovie({ movies, total }) {
             <Link
               to={`/movie-store/${movie.id}`}
               key={index}
-              exact={true}
-              className={`col ${total == 4 ? "l-3  m-3" : "l-2 m-2"} c-6`}
+              className={`col ${
+                total === 4 ? "l-3 m-4 m-xl-3 c-6" : "l-2 m-3 m-xl-2 c-6"
+              }`}
             >
               <div className="movie-item">
                 <div className="movie-img">

@@ -12,21 +12,38 @@ function NominatedMovies() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 200,
+    speed: 500,
     autoPlay: true,
     slidesToShow: 6,
     slidesToScroll: 1,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+    ],
   };
 
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=1"
-    )
+  const url =
+    "https://api.themoviedb.org/3/movie/now_playing?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=1";
+  const callApi = async (url) => {
+    await fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.results);
       });
+  };
+  useEffect(() => {
+    callApi(url);
   }, []);
 
   const gotoNext = () => {

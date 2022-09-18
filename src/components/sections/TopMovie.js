@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 function TopMovie({ title, movies, trailer, time }) {
   const [select, setSelect] = useState();
@@ -8,7 +9,7 @@ function TopMovie({ title, movies, trailer, time }) {
   useEffect(() => {
     const clickButton = setTimeout(() => {
       buttonRef.current.click();
-    }, 1500);
+    }, 1000);
 
     return () => {
       clearTimeout(clickButton);
@@ -32,11 +33,13 @@ function TopMovie({ title, movies, trailer, time }) {
       <div className="container">
         <div className="section-title grid">
           <div className="title row">
-            <span className={`${time ? "col l-4 m-3" : "col l-12"}`}>
+            <span
+              className={`${time ? "col l-4 m-3 c-3" : "col l-12 m-12 c-12"}`}
+            >
               {title}
             </span>
             {time && (
-              <div className="select-time col l-8 m-9">
+              <div className="select-time col l-8 m-9 c-9">
                 <ul className="row">
                   <li ref={buttonRef} onClick={(e) => ChangeSelect(e, 0, 10)}>
                     <button>Ngày</button>
@@ -60,22 +63,24 @@ function TopMovie({ title, movies, trailer, time }) {
                 {movies &&
                   movies.map((movie, index) => {
                     return (
-                      <div className="movie-item row" key={index}>
-                        <div className="movie-img col l-4 m-4">
-                          <img
-                            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                            alt={movie.title}
-                          />
-                          <div className="movie-status">
-                            {trailer == true ? <span>Trailer</span> : ""}
+                      <Link to={`/movie-store/${movie.id}`} key={index}>
+                        <div className="movie-item row">
+                          <div className="movie-img col l-4 m-4">
+                            <img
+                              src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                              alt={movie.title}
+                            />
+                            <div className="movie-status">
+                              {trailer === true ? <span>Trailer</span> : ""}
+                            </div>
+                          </div>
+                          <div className="movie-info col l-8 m-9">
+                            <h3 className="name-vi">{movie.title}</h3>
+                            <h3 className="name-eg">{movie.title}</h3>
+                            <span className="seed">10 lượt xem</span>
                           </div>
                         </div>
-                        <div className="movie-info col l-8 m-9">
-                          <h3 className="name-vi">{movie.title}</h3>
-                          <h3 className="name-eg">{movie.title}</h3>
-                          <span className="seed">10 lượt xem</span>
-                        </div>
-                      </div>
+                      </Link>
                     );
                   })}
               </>
@@ -84,22 +89,24 @@ function TopMovie({ title, movies, trailer, time }) {
                 {list &&
                   list.map((movie, index) => {
                     return (
-                      <div className="movie-item row" key={index}>
-                        <div className="movie-img col l-4 m-4">
-                          <img
-                            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                            alt={movie.title}
-                          />
-                          <div className="movie-status">
-                            {trailer == true ? <span>Trailer</span> : ""}
+                      <Link to={`/movie-store/${movie.id}`} key={index}>
+                        <div className="movie-item row">
+                          <div className="movie-img col l-4 m-4">
+                            <img
+                              src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                              alt={movie.title}
+                            />
+                            <div className="movie-status">
+                              {trailer === true ? <span>Trailer</span> : ""}
+                            </div>
+                          </div>
+                          <div className="movie-info col l-8 m-9">
+                            <h3 className="name-vi">{movie.title}</h3>
+                            <h3 className="name-eg">{movie.title}</h3>
+                            <span className="seed">10 lượt xem</span>
                           </div>
                         </div>
-                        <div className="movie-info col l-8 m-9">
-                          <h3 className="name-vi">{movie.title}</h3>
-                          <h3 className="name-eg">{movie.title}</h3>
-                          <span className="seed">10 lượt xem</span>
-                        </div>
-                      </div>
+                      </Link>
                     );
                   })}
               </>

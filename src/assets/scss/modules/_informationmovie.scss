@@ -25,6 +25,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            @include tablet-s {
+                bottom: 10px;
+            }
             .select-episode-button {
                 background-image: linear-gradient( 90deg ,#ff8a00 0,#ff5860 100%);
                 border: none;
@@ -41,7 +44,12 @@
                 }
                 @include tablet {
                     font-size: $font-select;
-                    width: 100px;
+                    width: 80px;
+                }
+                @include tablet-s {
+                    font-size: $font-description;
+                    width: 70px;
+                    padding: 10px 0;
                 }
             }
             .watch-button {
@@ -61,6 +69,10 @@
                 @include tablet {
                     font-size: $font-select;
                     padding: 15px 10px;
+                }
+                @include tablet-s {
+                    font-size: $font-description;
+                    padding: 10px 6px;
                 }
             }
         }

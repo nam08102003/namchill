@@ -1,5 +1,8 @@
 .top-movie {
     padding-top: 10px;
+    @include mobile {
+        padding-left: 12px;
+    }
     .movie-item {
         margin-top: 20px;
         &.row {
@@ -41,17 +44,27 @@
                 font-family: $font-arial;
                 font-weight: $font-m;
                 color: $color-white;
+                @include mobile {
+                    font-size: $font-select;
+                }
             }
             .name-eg {
                 font-size: $font-select;
                 font-family: $font-arial;
                 font-weight: $font-m;
+                color: $color-text;
+                @include mobile {
+                    font-size: $font-description;
+                }
             }
             .seed {
                 font-size: $font-select;
                 font-family: $font-arial;
                 font-weight: $font-m;
                 color: $color-text;
+                @include mobile {
+                    font-size: $font-description;
+                }
             }
         }
 
@@ -86,8 +99,16 @@
                         background-color: transparent;
                         border: none;
                         cursor: pointer;
+                        @include tablet-s {
+                            font-size: $font-description;
+                            padding: 2px 2px;
+                        }
                         @include tablet {
                             font-size: $font-description;
+                        }
+                        @include mobile {
+                            font-size: $font-description;
+                            padding: 1px;
                         }
 
                     }

@@ -8,6 +8,9 @@
     display: flex;
     align-items: center;
     position: relative;
+    @include mobile {
+        width: 300px;
+    }
     .logo-search {
         position: absolute;
         padding-left: 12px;

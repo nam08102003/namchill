@@ -5,6 +5,12 @@
         .wrapper {
             justify-content: center;
             align-items: center;
+            @include tablet-s {
+                padding: 0 5px;
+            }
+            @include mobile {
+                padding: 0 5px;
+            }
         }
         h1 {
             margin: 10px 0;
@@ -35,6 +41,12 @@
                 justify-content: center;
                 transition: 0.4s ease;
                 cursor: pointer;
+                @include tablet-s {
+                    padding: 10px 14px;
+                }
+                @include mobile {
+                    padding: 10px 14px;
+                }
                 svg {
                     width: 13px;
                     height: 13px;
@@ -62,6 +74,14 @@
         width: 100%;
         background-color: $color-secondary;
         height: 50px;
+        .navbar-desktop {
+            @include tablet-s {
+                display: none;
+            }
+            @include mobile {
+                display: none;
+            }
+        }
         .menu {
             display: inline-flex;
             align-items: center;
@@ -102,6 +122,78 @@
 
         .navbar-mobile {
             display: none;
+            position: relative;
+            padding: 0 10px;
+            .icon-bar {
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                }
+            }
+            @include mobile {
+                display: block;
+            }
+            @include tablet-s {
+                display: block;
+                .icon-search {
+                    display: none;
+                }
+            }
+            .menu-mobile {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: $color-secondary;
+                z-index: 200;
+                left: 0;
+                right: 0;
+                height: 0px;
+                overflow-y: auto;
+                transition: all 0.35s ease-in-out;
+                @include tablet-s {
+                    justify-content: center;
+                    align-items: flex-start;
+                }
+                li {
+
+                    padding: 8px 0;
+                    a {
+                        font-size: $font-menu;
+                        color: $color-text;
+                        padding: 8px 4px;
+                    }
+                    .active {
+                        color: $color-title;
+                    }
+                }
+
+                &.show-menu {
+                    height: 320px;
+                    border-top: 1px solid $color-text;
+                }
+
+            }
+        }
+    }
+
+    .search-mobile {
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 30px;
+        text-align: center;
+        // display: flex;
+        // align-self: center;
+        // justify-content: center;
+        display: none;
+        &.show {
+            display: block;
         }
     }
 

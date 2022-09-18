@@ -5,6 +5,9 @@
 .section-title {
     padding-left: 20px;
     align-items: center;
+    @include mobile {
+        padding: 0;
+    }
     @include tablet {
         padding-left: 10px;
     }
@@ -13,6 +16,9 @@
             font-size: $font-title;
             color: $color-title;
             text-transform: uppercase;
+            @include mobile {
+                font-size: $font-menu;
+            }
         }
     }
 
@@ -29,6 +35,9 @@
             padding: 5px 10px 5px 6px;
             border-radius: 5px;
             cursor: pointer;
+            @include mobile {
+                font-size: $font-description;
+            }
             svg {
                 padding-left: 3px;
                 width: 16px;
@@ -52,6 +61,9 @@
         overflow: hidden;
         @include tablet {
             max-height: 210px;
+        }
+        @include mobile {
+            max-height: 190px;
         }
         img {
             transition: all 0.5s ease-in-out;

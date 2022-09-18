@@ -24,7 +24,7 @@ function FilterMovie({ currentPage, ContentFilter }) {
         </div>
         <div className={`filter-movies__bottom ${show ? "show" : ""}`}>
           <div className="row">
-            <div className="col l-10">
+            <div className="col l-10 m-10 c-12">
               <form action="" id="form-filter">
                 {ContentFilter &&
                   ContentFilter.map((content, index) => {
@@ -49,7 +49,7 @@ function FilterMovie({ currentPage, ContentFilter }) {
                   })}
               </form>
             </div>
-            <div className="btn-group col l-2">
+            <div className="btn-group col l-2 m-2">
               <button className="btn-filter">Lọc Phim</button>
             </div>
           </div>

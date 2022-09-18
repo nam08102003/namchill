@@ -38,6 +38,9 @@
     .footer-menu {
         padding-left: 70px;
         padding-top: 20px;
+        @include mobile {
+            padding-left: 20px;
+        }
         ul {
             li {
                 padding: 6px 4px;

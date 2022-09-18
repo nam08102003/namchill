@@ -1,6 +1,9 @@
 .filter-movies {
     .container {
         margin-top: 20px;
+        @include mobile {
+            padding: 0 10px;
+        }
     }
 
     .show {
@@ -45,11 +48,16 @@
     #form-filter {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         .filter-box {
             flex: 1;
             overflow: hidden;
             border: 1px solid $color-secondary;
             margin: 0 5px;
+            @include mobile {
+                flex: auto;
+                margin-top: 8px;
+            }
             .filter-box-title {
                 display: none;
             }
@@ -68,6 +76,9 @@
         width: 100%;
         padding: 0;
         padding-right: 30px;
+        @include mobile {
+            text-align: center;
+        }
         .btn-filter {
             width: 100%;
             background-color: $color-red;
@@ -77,6 +88,11 @@
             color: $color-white;
             cursor: pointer;
             transition: all 0.4s ease-in-out;
+            @include mobile {
+                padding: 11px;
+                max-width: 100px;
+                border-radius: 10px;
+            }
         }
     }
 }

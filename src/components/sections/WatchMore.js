@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { AiOutlineRight } from "react-icons/ai";
 import ListMovie from "./ListMovie";
 
 function WatchMore() {
   const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    const url =
-      "https://api.themoviedb.org/3/movie/297762/similar?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=2";
-    fetch(url)
+  const url =
+    "https://api.themoviedb.org/3/movie/297762/similar?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=2";
+  const callApi = async (url) => {
+    await fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.results);
       });
+  };
+  useEffect(() => {
+    callApi(url);
   }, []);
   return (
     <div className="movie-favorite grid wide">

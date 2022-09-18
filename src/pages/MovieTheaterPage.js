@@ -7,20 +7,22 @@ function MovieTheaterPage() {
   const [page, setPage] = useState(1);
   const [element, setElement] = useState();
 
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=${page}`
-    )
+  const url = `https://api.themoviedb.org/3/movie/popular?api_key=07ae8877cdaf5f35409fc766524ec281&language=en-US&page=${page}`;
+  const callApi = async (url) => {
+    await fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.results);
       });
+  };
+  useEffect(() => {
+    callApi(url);
 
     element && element.classList.add("active");
     return () => {
       element && element.classList.remove("active");
     };
-  }, [element]);
+  }, [element, page, url]);
 
   const ChangePage = (e) => {
     setPage(e.target.innerHTML);

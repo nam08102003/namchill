@@ -6,16 +6,27 @@
     }
 
     .introduce-title {
-        display: inline-flex;
+        display: flex;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 5px;
         h3 {
             color: $color-title;
             position: relative;
+            @include mobile {
+                font-size: $font-select;
+            }
             &:first-child {
                 padding-right: 15px;
+                @include mobile {
+                padding-right: 8px;
+                }
             }
             &:not(:first-child) {
                 padding: 0 15px;
+                @include mobile {
+                    padding: 0 8px;
+                }
             }
             &::after {
                 content: '';
@@ -35,6 +46,9 @@
             line-height: 22px;
             font-size: $font-select;
             color: $color-text;
+            @include mobile {
+                font-size: $font-description;
+            }
         }
     }
 }

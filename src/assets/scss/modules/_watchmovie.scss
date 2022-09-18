@@ -5,6 +5,9 @@
         iframe {
             width: 100%;
             max-height: 450px;
+            @include mobile {
+                max-height: 250px;
+            }
         }
     }
 
@@ -35,6 +38,9 @@
                     color: $color-title;
                     font-weight: $font-m;
                     font-size: $font-info;
+                    @include mobile {
+                        font-size: 18px;
+                    }
                 }
                 span {
                     display: inline-flex;
@@ -44,6 +50,9 @@
                     cursor: pointer;
                     transition: all 0.3s ease-in-out;
                     line-height: 20px;
+                    @include mobile {
+                        font-size: $font-select;
+                    }
                     svg {
                         width: 18px;
                         height: 18px;
