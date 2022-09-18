@@ -1,0 +1,32 @@
+.movie-page {
+    .button-group {
+        margin-top: 50px;
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            li {
+                margin: 0 5px;
+                background-color: $color-secondary;
+                border: 1px solid $color-text;
+                cursor: pointer;
+                transition: all 0.4s ease-in-out;
+                &:hover {
+                    background-color: $color-title;
+                }
+                button {
+                    padding: 6px 12px;
+                    background-color: transparent;
+                    border: none;
+                    color: $color-white;
+                    font-size: $font-text;
+                    cursor: pointer;
+                }
+            }
+            .active {
+                background-color: $color-title;
+            }
+
+        }
+    }
+}

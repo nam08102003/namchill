@@ -44,7 +44,7 @@ function InformationMovie() {
 
   useEffect(() => {
     callApi(url, urlCredit);
-  }, []);
+  }, [movieId]);
 
   return (
     <div className="information-movie-site">

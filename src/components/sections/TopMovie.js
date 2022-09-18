@@ -32,11 +32,11 @@ function TopMovie({ title, movies, trailer, time }) {
       <div className="container">
         <div className="section-title grid">
           <div className="title row">
-            <span className={`${time ? "col l-5 m-4" : "col l-12"}`}>
+            <span className={`${time ? "col l-4 m-3" : "col l-12"}`}>
               {title}
             </span>
             {time && (
-              <div className="select-time col l-7 m-8">
+              <div className="select-time col l-8 m-9">
                 <ul className="row">
                   <li ref={buttonRef} onClick={(e) => ChangeSelect(e, 0, 10)}>
                     <button>Ngày</button>

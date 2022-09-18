@@ -7,6 +7,11 @@ import LayoutMovie from "./layouts/LayoutMovie";
 import LayoutWatchFilm from "./layouts/LayoutWatchFilm";
 import ViewTv from "./views/ViewTv";
 import ScrollToTop from "./utils/ScrollToTop";
+import MovieSeriesPage from "./pages/MovieSeriesPage";
+import MovieOddPage from "./pages/MovieOddPage";
+import MovieTheaterPage from "./pages/MovieTheaterPage";
+import MovieNewPage from "./pages/MovieNewPage";
+import MovieUpcomingPage from "./pages/MovieUpcomingPage";
 
 function App() {
   return (
@@ -16,14 +21,26 @@ function App() {
           <Route path="/" element={<LayoutList children={<Home />} />} />
           <Route path="/genre" element={<LayoutList children={<Home />} />} />
           <Route path="/nation" element={<LayoutList children={<Home />} />} />
-          <Route path="/series" element={<LayoutList children={<Home />} />} />
-          <Route path="/odd" element={<LayoutList children={<Home />} />} />
-          <Route path="/theater" element={<LayoutList children={<Home />} />} />
+          <Route
+            path="/series"
+            element={<LayoutList children={<MovieSeriesPage />} />}
+          />
+          <Route
+            path="/odd"
+            element={<LayoutList children={<MovieOddPage />} />}
+          />
+          <Route
+            path="/theater"
+            element={<LayoutList children={<MovieTheaterPage />} />}
+          />
           <Route
             path="/upcoming"
-            element={<LayoutList children={<Home />} />}
+            element={<LayoutList children={<MovieUpcomingPage />} />}
           />
-          <Route path="/news" element={<LayoutList children={<Home />} />} />
+          <Route
+            path="/news"
+            element={<LayoutList children={<MovieNewPage />} />}
+          />
           <Route
             path="/movie-store/:movieId"
             element={<LayoutMovie children={<IntroduceMovie />} />}

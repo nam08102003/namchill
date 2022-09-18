@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineRight } from "react-icons/ai";
 import ListMovie from "./ListMovie";
 

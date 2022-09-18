@@ -7,12 +7,13 @@
     .film-poster {
         padding: 0;
         position: relative;
+        max-height: 370px;
         .film-poster-main {
             img {
                 height: 370px;
                 border-radius: 3px;
                 @include tablet {
-                    height: 350px;
+                    height: 355px;
                 }
             }
 
@@ -20,7 +21,7 @@
         .select-button-group {
             position: absolute;
             width: 100%;
-            bottom: 7%;
+            bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -59,6 +60,7 @@
                 }
                 @include tablet {
                     font-size: $font-select;
+                    padding: 15px 10px;
                 }
             }
         }
