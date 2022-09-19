@@ -35,6 +35,9 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            @include tablet-s {
+                max-width: 150px;
+            }
             h3 {
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -86,14 +89,13 @@
         .select-time {
             ul {
                 li {
-                    padding: 5px 6px;
                     background-color: $color-option;
                     cursor: pointer;
                     &:not(:last-child) {
                         border-right: 1px solid $color-text;
                     }
                     button {
-                        padding: 5px 6px;
+                        padding: 6px 8px;
                         color: $color-text;
                         font-size: $font-select;
                         background-color: transparent;

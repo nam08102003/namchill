@@ -1,0 +1,33 @@
+.search-page {
+    .container {
+        padding: 20px 0;
+    }
+    h1 {
+        color: $color-white;
+        text-align: center;
+        font-size: $font-name;
+        @include mobile {
+            font-size: 26px;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+        @include tablet-s {
+            font-size: 26px;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+        span {
+            font-size: $font-name;
+            color: $color-title;
+            @include mobile {
+                font-size: 26px;
+            }
+        }
+    }
+    .movie-item {
+        padding: 0 5px;
+        .movie-status {
+            left: 5px !important;
+        }
+    }
+}

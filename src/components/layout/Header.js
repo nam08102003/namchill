@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
-import Search from "../sections/Search";
 import { BsSearch } from "react-icons/bs";
+import { BiBookmarkPlus } from "react-icons/bi";
+import Search from "../sections/Search";
 
 function Header({ Nav }) {
   const [show, setShow] = useState(false);
@@ -20,17 +21,17 @@ function Header({ Nav }) {
       <div className="container">
         <div className="header-top grid wide">
           <div className="wrapper row">
-            <div className="logo col l-3 m-3 c-6">
+            <div className="logo col l-3 m-3 c-xl-6 c-12">
               <h1>
                 <Link to="/" className="slogan">
-                  NamChill
+                  BestChillTv
                 </Link>
               </h1>
             </div>
-            <div className="search col l-7 m-6 c-0">
+            <div className="search col l-7 m-6 c-xl-0 c-0">
               <Search />
             </div>
-            <div className="movies-store col l-2 m-3 c-6">
+            <div className="movies-store col l-2 m-3 c-xl-6 c-0">
               <div className="get-store">
                 <BsFillBookmarkFill />
                 <span>Tủ Phim</span>
@@ -62,7 +63,10 @@ function Header({ Nav }) {
           <nav className="navbar-mobile">
             <div className="icon-bar">
               <FaBars onClick={ChangeShow} />
-              <BsSearch className="icon-search" onClick={ShowSearch} />
+              <div className="add-store">
+                <BiBookmarkPlus />
+                <BsSearch className="icon-search" onClick={ShowSearch} />
+              </div>
             </div>
             <ul className={`menu-mobile ${show ? "show-menu" : ""}`}>
               {Nav &&

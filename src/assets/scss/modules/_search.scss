@@ -1,5 +1,5 @@
 .search-form {
-    width: 470px;
+    width: 480px;
     height: 35px;
     border: 1px solid $color-title;
     border-radius: 17px;
@@ -8,6 +8,14 @@
     display: flex;
     align-items: center;
     position: relative;
+    margin: 0 auto;
+    @include mobile{
+        border-radius: 5px;
+    }
+    @include tablet-s{
+        margin: 0 auto;
+        border-radius: 5px;
+    }
     @include mobile {
         width: 300px;
     }

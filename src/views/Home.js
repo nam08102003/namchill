@@ -14,7 +14,6 @@ const getWidthWindow = () => {
 };
 function Home() {
   const [width, setWidth] = useState(getWidthWindow());
-  console.log(width);
   useEffect(() => {
     function handleResize() {
       setWidth(getWidthWindow());
@@ -32,7 +31,7 @@ function Home() {
       <MovieTheater />
       <div className="grid wide">
         <div className="container">
-          <div className="row">
+          <div className="row no-gutters">
             {width <= 480 ? (
               <>
                 <div className="col l-8 m-8 c-12">

@@ -12,6 +12,7 @@ import MovieOddPage from "./pages/MovieOddPage";
 import MovieTheaterPage from "./pages/MovieTheaterPage";
 import MovieNewPage from "./pages/MovieNewPage";
 import MovieUpcomingPage from "./pages/MovieUpcomingPage";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   return (
@@ -40,6 +41,10 @@ function App() {
           <Route
             path="/news"
             element={<LayoutList children={<MovieNewPage />} />}
+          />
+          <Route
+            path="/search"
+            element={<LayoutMovie children={<SearchPage />} />}
           />
           <Route
             path="/movie-store/:movieId"
