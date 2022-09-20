@@ -13,6 +13,7 @@ import MovieNewPage from "./pages/MovieNewPage";
 import MovieUpcomingPage from "./pages/MovieUpcomingPage";
 import SearchPage from "./pages/SearchPage";
 import MovieStore from "./pages/MovieStore";
+import ComingSoon from "./components/ComingSoon/ComingSoon";
 
 function App() {
   return (
@@ -45,10 +46,10 @@ function App() {
           path="/search"
           element={<LayoutMovie children={<SearchPage />} />}
         />
-        <Route
+        {/* <Route
           path="/store"
           element={<LayoutMovie children={<MovieStore />} />}
-        />
+        /> */}
         <Route
           path="/movie-store/:movieId"
           element={<LayoutMovie children={<IntroduceMovie />} />}
@@ -57,6 +58,7 @@ function App() {
           path="/watch-movie/:params/:movieId"
           element={<LayoutWatchFilm children={<ViewTv />} />}
         />
+        <Route path="/*" element={<LayoutMovie children={<ComingSoon />} />} />
       </Routes>
     </div>
   );

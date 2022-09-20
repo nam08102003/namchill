@@ -20,7 +20,7 @@ function LayoutMovie({ children }) {
     return () => {
       clearTimeout(removeLoading);
     };
-  }, [location]);
+  }, [location.pathname]);
 
   return (
     <Loading loading={loading}>

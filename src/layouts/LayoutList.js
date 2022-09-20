@@ -15,8 +15,6 @@ function LayoutList({ children }) {
     (navLink) => navLink.href === currentLocation.pathname
   );
 
-  console.log(currentLocation);
-
   useEffect(() => {
     setLoading(true);
     const removeLoading = setTimeout(() => {
@@ -26,7 +24,7 @@ function LayoutList({ children }) {
     return () => {
       clearTimeout(removeLoading);
     };
-  }, [currentLocation]);
+  }, [currentLocation.pathname]);
 
   return (
     <Loading loading={loading}>

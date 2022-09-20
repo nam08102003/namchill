@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
 import { BiBookmarkPlus } from "react-icons/bi";
+import { AiFillCaretDown } from "react-icons/ai";
 import Search from "../sections/Search";
 
 function Header({ Nav }) {
@@ -21,6 +22,19 @@ function Header({ Nav }) {
 
   const RedirectPage = () => {
     navigate("/store");
+  };
+
+  const ShowDropdown = (e, dropdown) => {
+    if (dropdown) {
+      e.preventDefault();
+    }
+
+    if (e.target.classList.contains("show-dropdown") === true) {
+      console.log(123);
+      e.target.classList.remove("show-dropdown");
+    } else {
+      e.target.classList.add("show-dropdown");
+    }
   };
 
   return (
@@ -58,9 +72,34 @@ function Header({ Nav }) {
                         className={({ isActive }) =>
                           isActive ? "active" : undefined
                         }
+                        id={navLink.dropdown ? "dropdown" : ""}
                         to={navLink.href ? navLink.href : ""}
                       >
                         {navLink.name}
+                        {navLink.dropdown ? <AiFillCaretDown /> : ""}
+                        {navLink.dropdown === true ? (
+                          <div className="menu-dropdown-site">
+                            <ul className="menu-dropdown row">
+                              {navLink.children &&
+                                navLink.children.map((children, index) => {
+                                  return (
+                                    <li
+                                      key={index}
+                                      className="col l-4 m-4 c-12"
+                                    >
+                                      <NavLink
+                                        to={children.href ? children.href : ""}
+                                      >
+                                        {children.name}
+                                      </NavLink>
+                                    </li>
+                                  );
+                                })}
+                            </ul>
+                          </div>
+                        ) : (
+                          ""
+                        )}
                       </NavLink>
                     </li>
                   );
@@ -84,9 +123,35 @@ function Header({ Nav }) {
                         className={({ isActive }) =>
                           isActive ? "active" : undefined
                         }
+                        id={navLink.dropdown ? "dropdown" : ""}
                         to={navLink.href ? navLink.href : ""}
+                        onClick={(e) => ShowDropdown(e, navLink.dropdown)}
                       >
                         {navLink.name}
+                        {navLink.dropdown ? <AiFillCaretDown /> : ""}
+                        {navLink.dropdown === true ? (
+                          <div className="menu-dropdown-site">
+                            <ul className="menu-dropdown">
+                              {navLink.children &&
+                                navLink.children.map((children, index) => {
+                                  return (
+                                    <li
+                                      key={index}
+                                      className="col l-4 m-4 c-12"
+                                    >
+                                      <NavLink
+                                        to={children.href ? children.href : ""}
+                                      >
+                                        {children.name}
+                                      </NavLink>
+                                    </li>
+                                  );
+                                })}
+                            </ul>
+                          </div>
+                        ) : (
+                          ""
+                        )}
                       </NavLink>
                     </li>
                   );

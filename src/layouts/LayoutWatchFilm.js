@@ -20,7 +20,7 @@ function LayoutWatchFilm({ children }) {
     return () => {
       clearTimeout(removeLoading);
     };
-  }, [location]);
+  }, [location.pathname]);
   return (
     <Loading loading={loading}>
       <Header Nav={navLinks} />

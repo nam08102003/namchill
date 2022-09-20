@@ -104,7 +104,9 @@
                 font-family: $font-arial;
                 cursor: pointer;
                 transition: all 0.4s ease-in-out;
-                overflow: hidden;
+                overflow: visible;
+                z-index: 1000;
+                position: relative;
                 a {
                     padding: 15px 20px;
                     color: #fdfdfd;
@@ -113,8 +115,32 @@
                     line-height: 50px;
                     text-transform: uppercase;
                     transition: all 0.4s ease-in-out;
+                    &#dropdown {
+                        &.active {
+                            background-color: $color-secondary;
+                        }
+                        &:hover {
+                            background-color: $color-title;
+                        }
+                    }
                     @include tablet {
                         font-size: $font-text;
+                    }
+                    &:hover {
+                        .menu-dropdown-site {
+                            display: block;
+                        }
+                    }
+
+                    svg {
+                        width: 16px;
+                        height: 16px;
+                        padding-left: 4px;
+                        padding-top: 4px;
+                        @include mobile {
+                            width: 14px;
+                            height: 14px;
+                        }
                     }
                 }
                 &:hover {
@@ -175,10 +201,12 @@
                 height: 0px;
                 overflow-y: auto;
                 transition: all 0.35s ease-in-out;
+                overflow-y: scroll;
                 @include tablet-s {
                     justify-content: center;
                     align-items: flex-start;
                 }
+
                 li {
 
                     padding: 8px 0;
@@ -186,6 +214,22 @@
                         font-size: $font-menu;
                         color: $color-text;
                         padding: 8px 4px;
+
+                        &#dropdown {
+                            &.active {
+                                color: $color-text;
+                            }
+                            &:hover {
+                                color: $color-title;
+                            }
+                        }
+
+                        svg {
+                            width: 14px;
+                            height: 14px;
+                            padding-left: 4px;
+                            padding-top: 4px;
+                        }
                     }
                     .active {
                         color: $color-title;
@@ -193,12 +237,77 @@
                 }
 
                 &.show-menu {
-                    height: 320px;
+                    min-height: 320px;
+                    max-height: 1000px;
+                    overflow: scroll;
                     border-top: 1px solid $color-text;
+                }
+
+                .menu-dropdown-site {
+                    height: 0;
+                    padding: 0;
+                    display: none;
+                }
+
+                #dropdown {
+                    color: $color-text !important;
+                    &.show-dropdown {
+                        color: $color-title !important;
+                        .menu-dropdown-site {
+                            display: block;
+                            height: auto;
+                            width: 100%;
+                        }
+                    }
                 }
 
             }
         }
+
+        .menu-dropdown-site {
+            width: 500px;
+            max-width: 510px;
+            display: none;
+            left: 0;
+            right: 0;
+            padding-bottom: 10px;
+            z-index: 1000;
+            height: auto;
+            position: absolute;
+            background-color: $color-option;
+            text-align: center;
+            @include tablet-s {
+                padding-left: 10px;
+                text-align: left;
+                .menu-dropdown {
+                    padding-left: 10px !important;
+                    li {
+                        padding: 3px 0 !important;
+                    }
+                }
+            }
+            @include mobile {
+                width: 100%;
+            }
+            .menu-dropdown {
+                padding: 0;
+                margin: 0;
+                row-gap: 0;
+                margin-top: 5px;
+                li {
+                    transition: all 0.4s ease-in-out;
+                    padding: 6px 0;
+                    a {
+                        font-size: $font-select;
+                        padding: 6px 4px;
+                    }
+                    &:hover {
+                        background-color: $color-title;
+                    }
+                }
+            }
+        }
+
     }
 
     .search-mobile {
