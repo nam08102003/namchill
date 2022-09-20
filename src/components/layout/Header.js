@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
@@ -9,13 +9,20 @@ import Search from "../sections/Search";
 function Header({ Nav }) {
   const [show, setShow] = useState(false);
   const [search, setSearch] = useState(false);
+  const navigate = useNavigate();
 
   const ChangeShow = () => {
     setShow(!show);
   };
+
   const ShowSearch = () => {
     setSearch(!search);
   };
+
+  const RedirectPage = () => {
+    navigate("/store");
+  };
+
   return (
     <header>
       <div className="container">
@@ -32,9 +39,9 @@ function Header({ Nav }) {
               <Search />
             </div>
             <div className="movies-store col l-2 m-3 c-xl-6 c-0">
-              <div className="get-store">
+              <div className="get-store" onClick={RedirectPage}>
                 <BsFillBookmarkFill />
-                <span>Tủ Phim</span>
+                <button>Tủ Phim</button>
                 <span className="amount-movies">0</span>
               </div>
             </div>

@@ -9,7 +9,7 @@ function Footer({ NavLinks, OutLinks }) {
           <div className="footer-top row">
             <div className="footer-top__left col l-4 m-4 c-12">
               <div className="footer-logo">
-                <h1>NamChill</h1>
+                <h1>BestChillTv</h1>
               </div>
               <div className="footer-description">
                 <p>

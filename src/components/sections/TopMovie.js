@@ -8,8 +8,8 @@ function TopMovie({ title, movies, trailer, time }) {
 
   useEffect(() => {
     const clickButton = setTimeout(() => {
-      buttonRef.current.click();
-    }, 1000);
+      buttonRef && buttonRef.current && buttonRef.current.click();
+    }, 500);
 
     return () => {
       clearTimeout(clickButton);

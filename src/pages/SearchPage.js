@@ -18,7 +18,6 @@ function SearchPage() {
     callApi(url);
   }, [content]);
 
-  console.log(movies);
   return (
     <div className="movie-page search-page grid wide">
       <div className="container">

@@ -12,8 +12,10 @@ const getWidthWindow = () => {
   const { innerWidth: width } = window;
   return width;
 };
+
 function Home() {
   const [width, setWidth] = useState(getWidthWindow());
+
   useEffect(() => {
     function handleResize() {
       setWidth(getWidthWindow());

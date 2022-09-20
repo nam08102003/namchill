@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../components/layout/Sidebar";
 import ListMovie from "../components/sections/ListMovie";
+import Loading from "../utils/Loading";
 
 function MovieNewPage() {
   const [movies, setMovies] = useState([]);
